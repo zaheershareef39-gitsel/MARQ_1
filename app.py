@@ -126,6 +126,7 @@ async def request_groq(request: ChatCompletionRequest) -> dict[str, Any]:
 
 
 @app.get("/")
+@app.head("/")
 async def health_check() -> dict[str, str]:
     """A small health endpoint for Render and manual deployment checks."""
     return {"status": "ok", "service": "masquerade-groq-chatbot"}
